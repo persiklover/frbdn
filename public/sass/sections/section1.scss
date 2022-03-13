@@ -1,0 +1,40 @@
+/* Components */
+
+@import "../components/download";
+@import "../components/portfolio";
+
+.section1 {
+  position: relative;
+  padding-top:    0;
+  padding-bottom: 20rem;
+
+  .container {
+    position: relative;
+  }
+
+  @include sm {
+    overflow-x: hidden;
+    padding-top:    3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  &__heading {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top:  0;
+
+    @include sm {
+      position: static;
+      transform: translateY(3.5rem);
+    }
+  }
+
+  &__download {
+    margin-top: 13.5rem;
+
+    @include sm {
+      margin-top: 3.5rem;
+    }
+  }
+}

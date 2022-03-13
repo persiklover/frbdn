@@ -1,0 +1,60 @@
+@import "mixins"
+@import "grid"
+@import "vars"
+@import "fonts"
+
+/* normalize.css */
+  
+@import "../lib/normalize/normalize"
+
+/* modern reset.css */
+  
+@import "../lib/reset.css/reset"
+
+/* owl.carousel */
+  
+@import "../lib/owlcarousel/scss/owl.carousel"
+
+button,
+input,
+a
+  &:focus
+    outline: none
+
+a
+  display: inline-flex
+  color: inherit
+  text-decoration: none
+
+button
+  font-family: inherit
+
+  cursor: pointer
+
+br
+  user-select: none
+
+=visually-hidden
+  position: absolute
+  clip: rect(0 0 0 0)
+  width:   1px
+  height:  1px
+  margin: -1px
+  overflow: hidden
+
+.visually-hidden
+  +visually-hidden
+
+html
+  font-size: .520834vw
+
+  +sm
+    // font-size: 1.30209vw
+    font-size: 1.26595vw
+
+body
+  min-width: 320px
+  
+  &.scroll-disabled
+    height: 100vh
+    overflow-y: hidden

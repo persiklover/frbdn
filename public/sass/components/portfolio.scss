@@ -1,0 +1,197 @@
+.portfolio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include sm {
+    padding-top: 5rem;
+  }
+
+  &-filters {
+
+    @include sm {
+      position: absolute;
+      left: 23rem;
+      top:  0;
+      transform: translateY(-50%);
+
+      display: inline-block;
+    }
+
+    &[data-category="all"] {
+      li:first-of-type {
+        display: none;
+      }
+    }
+
+    &__selected {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+
+      font-size: 2.4rem;
+
+      @include sm {
+        flex-shrink: 0;
+        margin-bottom: 0;
+
+        font-family: "Stolzl Book";
+        font-size: 1.8rem;
+        font-weight: bold;
+
+        &::after {
+          content: '/';
+          margin: 0 .5rem;
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include sm {
+        display: inline;
+      }
+
+      li {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 1.5rem;
+
+        @include sm {
+          display: inline-block;
+
+          br {
+            display: none;
+          }
+        }
+
+        &[hidden] {
+          display: none;
+        }
+
+        
+
+        &:last-child {
+          margin-bottom: 0;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+
+        text-align: left;
+
+        &::after {
+          content: '/';
+          margin: 0 .5rem;
+        }
+      }
+    }
+  }
+
+  &-controls {
+    order: -1;
+
+    padding: 9rem 0 2rem;
+    display: flex;
+    align-items: flex-end;
+
+    font-size: 3.6rem;
+
+    @include sm {
+      padding: 3rem 0;
+    }
+
+    &__counter {
+      margin: 0 2rem;
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    &__separator {
+      margin: 0 .4rem;
+    }
+    
+    &__current,
+    &__total {
+      width: 1.5ch;
+      text-align: center;
+      font-family: "Ugloed", sans-serif;
+    }
+
+    &__current {
+      display: inline-block;
+      transform: translateY(-1rem);
+
+      font-size: 4.8rem;
+    }
+
+    &__total {
+      font-size: 2.4rem;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+
+      &.prev {
+        margin-bottom: 3.4rem;
+        transform: rotate(-180deg);
+      }
+      
+      &.next {
+        margin-bottom: 1.6rem;
+      }
+
+      img {
+        width: 5.4rem;
+      }
+    }
+
+  }
+
+  &-slider {
+    position: absolute;
+    right: 0;
+    top:   0;
+    transform: translateX(33rem);
+
+    width: 125rem;
+
+    @include sm {
+      position: static;
+      width: calc(100% + (6rem * 2));
+      transform: none;
+      margin: 0 -6rem;
+    }
+
+    .owl-stage-outer {
+      @include sm {
+        // margin: 0 -5rem;
+      }
+    }
+
+    &__item {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

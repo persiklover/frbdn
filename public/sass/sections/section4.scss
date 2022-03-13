@@ -1,0 +1,59 @@
+/* Components */
+
+@import "../components/form";
+
+.section4 {
+  position: relative;
+  padding: 0;
+
+  &__subtitle {
+    margin:  5.5rem 0 2.1rem;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__line {
+    display: none;
+    position: absolute;
+    left:   0;
+    bottom: -15rem;
+    background: url(../img/section4-ling.png) no-repeat center / cover;
+    width: 199.2rem;
+    height: 22.7rem;
+
+    @include no-select();
+  }
+
+  &__form {
+    @include sm {
+      margin: 0 -3.3rem;
+      margin-top: 3.2rem;
+    }
+  }
+
+  &__letter1 {
+    position: absolute;
+    z-index: 2;
+    left:  -1rem;
+    top:   40rem;
+
+    @include sm {
+      display: none;
+      left: initial;
+      right: -3rem;
+      top:   10rem;
+    }
+
+    img {
+      transform: rotate(-3deg);
+      height: 37.3rem;
+
+      @include sm {
+        height: 44.2rem;
+      }
+    }
+  }
+
+}

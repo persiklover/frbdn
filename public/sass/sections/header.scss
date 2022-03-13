@@ -1,0 +1,81 @@
+/* Components */
+
+@import "../components/logo";
+@import "../components/lang-select";
+@import "../components/nav";
+
+.header {
+  position: relative;
+  padding: 5rem 0 13rem;
+  overflow-x: hidden;
+
+  @include sm {
+    overflow-x: hidden;
+    padding-bottom: 0;
+  }
+  
+  &__inner {
+    position: relative;
+  }
+
+  &__lang-select {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    margin-right: 2rem;
+
+    @include sm {
+      right: 0;
+    }
+  }
+
+  &__heading {
+    margin-top:    5rem;
+    margin-bottom: 3rem;
+
+    @include sm {
+      margin-top:    3rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left:   0;
+    bottom: 0;
+    width: 199.2rem;
+    height: 22.7rem;
+    background: url(../img/section1-line.png) no-repeat center / cover;
+
+    @include no-select();
+
+    @include sm {
+      position: static;
+      width: 127.6rem;
+      height: 14.6rem;
+      background-size: contain;
+    }
+  }
+
+  &__letter1 {
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+    right: 12rem;
+    top:   -56rem;
+
+    @include sm {
+      right: 31rem;
+      top:  -38rem;
+    }
+    
+    img {
+      transform: rotate(188deg);
+      height: 78rem;
+
+      @include sm {
+        height: 48.7rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.thank-you {
+  background: black url(../img/thank-you-bg.png) no-repeat center top / contain;
+  min-width: 48.2rem;
+  padding: 2.7rem 4.7rem;
+  padding-top: 9.7rem;
+  color: white;
+
+  font-family: "Stolzl Book";
+  font-size: 1.5rem;
+
+  &__close {
+    margin-top: 3rem;
+    margin-left: -1rem;
+    padding: .5rem 1rem;
+    background: white;
+    border: none;
+
+    color: #0a0000;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,19 @@
+/* Components */
+
+@import "../components/cooperation";
+
+.section3 {
+
+  &__suptitle {
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__cooperation {
+    margin: 0 -5.5rem;
+
+    @include sm {
+      margin: 0 -3rem;
+    }
+  }
+}

@@ -1,0 +1,327 @@
+@mixin radiofy {
+
+  @include visually-hidden();
+
+  &:checked + span::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    width:  0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+
+  + span {
+    flex-shrink: 0;
+    position: relative;
+    display: inline-block;
+    margin-right: 2rem;
+
+    width:  1.8rem;
+    height: 1.8rem;
+    border: 0.2rem solid;
+    border-radius: 50%;
+  }
+}
+
+.form {
+  $root: &;
+
+  padding: 4.8rem 5.4rem;
+  margin: 0 -5.5rem;
+  border: 0.2rem solid currentColor;
+
+  @include sm {
+    padding: 2.8rem 3.4rem;
+    padding-bottom: 5.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 -5rem;
+    display: flex;
+
+    @include sm {
+      margin: 0;
+      flex-direction: column;
+    }
+
+    li {
+      position: relative;
+      width: (100% / 3);
+      padding: 0 5rem;
+
+      @include sm {
+        width: 100%;
+        padding: 0;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right:  0;
+        bottom: 0;
+        width: 0.2rem;
+        height: 85%;
+        background: currentColor;
+
+        @include sm {
+          display: none;
+        }
+      }
+
+      &:last-child {
+
+        #{$root}-step__num::after {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-step {
+
+    .hint {
+      margin: 0;
+
+      font-size: 1.2rem;
+    }
+
+    &__num {
+      position: relative;
+      font-family: "Ugloed";
+      font-size: 3rem;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top:   50%;
+        transform: translateY(-50%);
+        margin-top:   .5rem;
+        margin-left: 3.8rem;
+
+        display: flex;
+        width: 34.1rem;
+        height: 5.2rem;
+        background: url(../img/arrow_long.svg) no-repeat center / cover;
+
+        @include sm {
+          display: none;
+        }
+      }
+    }
+
+    &__offset {
+      margin-left:   3.7rem;
+    }
+
+    &__header {
+      margin-top:    2.5rem;
+      margin-bottom: 3.6rem;
+
+      h3 {
+        margin: 0;
+        margin-bottom: 1.2rem;
+
+        font-size: 1.8rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+    }
+
+    &__footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 3.5rem;
+      
+      @include sm {
+        text-align: right;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+
+    &--1 {
+
+      .stack {
+        --space: 2.2rem;
+
+        @include sm {
+          height: 18rem;
+
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          > * {
+            width: 50%;
+
+            &:nth-child(4n + 1) {
+              margin-top: 0;
+            }
+          }
+        }
+
+      }
+
+      input[type="checkbox"] {
+        @include radiofy();
+      }
+
+    }
+
+    &--2 {
+
+      @include sm {
+
+        #{$root}-step__footer {
+          margin-top: -6rem;
+        }
+  
+        #{$root}__next-btn {
+          margin-top: 0;
+        }
+
+      }
+
+      .stack {
+        --space: 3.1rem;
+
+        @include sm {
+          --space: 2rem;
+          height: 16.5rem;
+
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          > * {
+            width: (50% - 4%);
+
+            &:nth-child(2n + 1) {
+              margin-top: 0;
+            }
+          }
+
+        }
+      }
+
+    }
+
+    &--3 {
+
+      @include sm {
+
+        #{$root}-step__header {
+          margin-bottom: 5rem;
+        }
+
+        #{$root}-step__footer {
+          margin-top: -3.5rem;
+          align-items: flex-start;
+          padding-left: 50%;
+
+          text-align: left;
+        }
+
+      }
+
+      .stack {
+        --space: 3.4rem;
+
+        @include sm {
+          margin-top: -10.3rem;
+
+          height: 18rem;
+
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          > * {
+            width: (50% - 4%);
+            margin-top: 0;
+            margin-bottom: 2rem;
+
+            &:first-child {
+              margin-top: 9.5rem;
+            }
+          }
+        }
+      }
+
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+    
+    input[type="radio"] {
+      @include radiofy();
+    }
+
+    .agreement-checkbox {
+      @include visually-hidden();
+
+      &:checked + span {
+        background: url(../img/checkbox.svg) no-repeat center / 2rem;
+      }
+
+      + span {
+        flex-shrink: 0;
+        margin-right: 2rem;
+        display: inline-block;
+        width:  3.7rem;
+        height: 3.8rem;
+        border: 0.2rem solid;
+
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  &__next-btn {
+    display: none;
+    margin-top: 2.7rem;
+    padding-top:    .5rem;
+    padding-bottom: .5rem;
+
+    @include sm {
+      display: inline-block;
+    }
+  }
+
+  &__agreement {
+    margin-top: 2.5rem;
+    line-height: 1.25;
+  }
+
+  &__submit {
+    box-shadow: inset 0 0 3.2rem rgba(0, 0, 0, 0.18);
+    background-image: linear-gradient(to right, #f0f0f0 0%, #464646 50%, #cdcdcd 83%, #6d6d6d 100%);
+    border: none;
+    padding: 1rem 5rem;
+
+    font-family: "Ugloed", sans-serif;
+    color: white;
+  }
+}

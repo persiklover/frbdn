@@ -1,0 +1,11 @@
+.logo {
+  img {
+    height: 7.1rem;
+  }
+
+  &--large {
+    img {
+      height: 10.4rem;
+    }
+  }
+}

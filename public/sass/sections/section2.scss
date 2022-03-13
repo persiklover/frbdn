@@ -1,0 +1,93 @@
+/* Components */
+
+@import "../components/clients";
+
+.section2 {
+  position: relative;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__subtitle {
+    display: block;
+    margin: 6.7rem 0 3.1rem;
+
+    @include sm {
+      margin-top: 3.6rem;
+    }
+  }
+
+  &__clients {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include sm {
+      position: static;
+      margin: 5rem 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 2.3rem;
+
+    &:last-of-type {
+      margin-top:    5.3rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__cta {
+    margin-top:   3.5rem;
+    margin-left: -3.5rem;
+  }
+
+  &__letter1 {
+    position: absolute;
+    z-index: 2;
+    right: 44rem;
+    top:   13rem + 15rem;
+
+    @include sm {
+      right: 30rem;
+      top:  -11rem;
+    }
+
+    img {
+      transform: rotate(-2deg);
+      height: 34.3rem;
+
+      @include sm {
+        height: 21.4rem;
+      }
+    }
+  }
+
+  &__letter2 {
+    position: absolute;
+    z-index: 2;
+    right: -6rem;
+    top:   13rem  + 15rem;
+    
+    @include sm {
+      right:  -3rem;
+      top:   -19rem;
+    }
+
+    img {
+      transform: rotate(-5deg);
+      height: 92.4rem;
+
+      @include sm {
+        height: 53.4rem;
+      }
+    }
+  }
+
+  &__letter1,
+  &__letter2 {
+    @include no-select();
+  }
+}

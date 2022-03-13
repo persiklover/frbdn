@@ -1,0 +1,74 @@
+@import "../components/our-projects";
+
+.footer {
+  position: relative;
+  padding: 22rem 0 10rem;
+  overflow: hidden;
+
+  @include sm {
+    padding-top: 18rem;
+    padding-right: 16rem;
+    overflow: hidden;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include sm {
+      align-items: flex-start;
+      padding: 0 3.5rem;
+    }
+  }
+
+  &__copyright {
+    margin-top: 3.1rem;
+    display: block;
+
+    font-size: 1.2rem;
+
+    @include sm {
+      margin-top: 6.5rem;
+    }
+  }
+
+  &__letter1 {
+    position: absolute;
+    z-index: 2;
+    left:  -1rem;
+    top:   -6rem;
+
+    @include sm {
+      left: initial;
+      right: -3rem;
+      top:   10rem;
+    }
+
+    img {
+      transform: rotate(-3deg);
+      height: 37.3rem;
+
+      @include sm {
+        height: 44.2rem;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left:   0rem;
+    top:    0rem;
+    width: 199.2rem;
+    height: 22.7rem;
+    background: url(../img/section1-line.png) no-repeat center / cover;
+
+    @include no-select();
+
+    @include sm {
+      width: 127.6rem;
+      height: 14.6rem;
+      background-size: contain;
+    }
+  }
+}
