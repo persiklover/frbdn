@@ -1,18 +1,16 @@
 const gulp = require('gulp');
 
 // CSS
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
-const minifyCSS = require('gulp-csso');
-const autoprefixer = require('gulp-autoprefixer');
 const postcss = require('gulp-postcss');
+
 // JS
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 
 const browserSync = require('browser-sync').create();
-const notify = require('gulp-notify');
 
 gulp.task('html', function() {
   return gulp.src('public/*.html')
@@ -23,14 +21,11 @@ gulp.task('css', function() {
   return gulp.src('public/sass/main.sass')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }))
-    .on('error', notify.onError())
     .pipe(postcss([
-      require('postcss-custom-properties')()
+      require('postcss-custom-properties')(),
+      require('autoprefixer')({ overrideBrowserslist: ['last 4 versions'] }),
+      require('cssnano')()
     ]))
-    .pipe(autoprefixer({
-      browsers: ['last 4 versions']
-    }))
-    .pipe(minifyCSS())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('public/css'))
     .pipe(browserSync.stream({ match: '**/*.css' }));

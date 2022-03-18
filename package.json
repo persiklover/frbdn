@@ -1,22 +1,20 @@
 {
-  "private": true,
+  "private": "true",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-core": "^6.26.3",
-    "browser-sync": "^2.26.5",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "browser-sync": "^2.27.9",
+    "cssnano": "^5.1.4",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-csso": "^3.0.1",
+    "gulp-csso": "^4.0.1",
     "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-notify": "^3.2.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "postcss-custom-properties": "^10.0.0"
-  },
-  "dependencies": {}
+    "postcss-custom-properties": "^12.1.4",
+    "sass": "^1.49.9"
+  }
 }
